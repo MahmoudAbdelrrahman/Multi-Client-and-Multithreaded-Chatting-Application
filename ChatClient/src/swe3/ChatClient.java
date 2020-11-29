@@ -45,7 +45,6 @@ public  class ChatClient {
         }
         else {
             System.out.println("Connection succeeded");
-
             if (client.login("karim", "karim")) {
                 System.out.println("Logged in Successfully!");
                 client.message("7oda","Hello mahmoud");
@@ -56,12 +55,12 @@ public  class ChatClient {
         }
     }
 
-    private void message(String sendTo, String messageBody) throws IOException {
+    public void message(String sendTo, String messageBody) throws IOException {
         String message= "message" + sendTo + " " + messageBody+"\n";
         serverOut.write(message.getBytes());
     }
 
-    private boolean login(String username, String password) throws IOException {
+    public boolean login(String username, String password) throws IOException {
         String signIn = "Login" + username + " " + password;
         serverOut.write(signIn.getBytes());
         String response = bufferedIn.readLine();
@@ -76,12 +75,12 @@ public  class ChatClient {
 
     }
 
-    private void logout() throws IOException {
+    public void logout() throws IOException {
         String cmd ="logout\n";
         serverOut.write(cmd.getBytes());
     }
 
-    private void startMessageReader(){
+    public void startMessageReader(){
         Thread k=new Thread(){
             @Override
             public void run() {
@@ -139,7 +138,7 @@ public  class ChatClient {
         }
     }
 
-    private boolean connect() {
+    public boolean connect() {
         try {
             this.socket = new Socket(serverName, serverPort);
             System.out.println("Client port is: " + socket.getLocalPort());
