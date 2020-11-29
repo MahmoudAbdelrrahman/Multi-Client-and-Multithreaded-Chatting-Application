@@ -7,5 +7,26 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-tests.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-test-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/apidocs" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-tests.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Apache/commons-lang3-3.11-bin/commons-lang3-3.11/commons-lang3-3.11-test-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

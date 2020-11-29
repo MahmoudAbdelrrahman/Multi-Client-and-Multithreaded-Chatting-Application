@@ -59,7 +59,7 @@ public class ServerManager extends Thread{
                     handleLeave(tokens);
                 }
                 else{
-                    String msg= "unknown " + cmd+ "\n";
+                    String msg= "Unknown Command " + cmd+ "\n";
                     outputStream.write(msg.getBytes());
                 }
             }
@@ -127,7 +127,7 @@ public class ServerManager extends Thread{
             String login=tokens[1];
             String password = tokens[2];
 
-            if((login.equals("guest")&& password.equals("guest")) || (login.equals("7oda")&& password.equals("7oda"))){
+            if((login.equals("karim")&& password.equals("karim")) || (login.equals("7oda")&& password.equals("7oda"))){
                 String msg= "Logged in Successfully!\n";
                 outputStream.write(msg.getBytes());
                 this.login= login;
@@ -153,6 +153,7 @@ public class ServerManager extends Thread{
             else{
                 String msg= "Incorrect Username or Password.\n";
                 outputStream.write(msg.getBytes());
+                System.err.println("Login failed for user: "+login);
             }
         }
     }
