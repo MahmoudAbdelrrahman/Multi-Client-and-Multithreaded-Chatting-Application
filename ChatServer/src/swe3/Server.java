@@ -8,25 +8,28 @@ import java.util.List;
 
 public class Server extends Thread{
     private final int serverPort;
-    private ArrayList<ServerManager> managerList=new ArrayList<>();
+
+    private ArrayList<ServerWorker> workerList = new ArrayList<>();
+
     public Server(int serverPort){
         this.serverPort= serverPort;
     }
 
-    public List<ServerManager> getManagerList() {
-        return managerList;
+    public List<ServerWorker> getWorkerList() {
+        return workerList;
     }
 
+    @Override
     public void run(){
         try {
             ServerSocket serverSocket = new ServerSocket(serverPort);
             while(true) {
-                System.out.println("Client Connection Acceptance processing...");
+                System.out.println("About to accept client connection...");
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Client Connection from"+clientSocket+" Accepted.");
-                ServerManager manager= new ServerManager(this,clientSocket);
-                managerList.add(manager);
-                manager.start();
+                System.out.println("Accepted connection from " + clientSocket);
+                ServerWorker worker= new ServerWorker(this,clientSocket);
+                workerList.add(worker);
+                worker.start();
             }
         }
         catch(IOException e){
@@ -34,7 +37,7 @@ public class Server extends Thread{
         }
     }
 
-    public void removeManager(ServerManager serverManager) {
-        managerList.remove(serverManager);
+    public void removeWorker(ServerWorker serverWorker) {
+        workerList.remove(serverWorker);
     }
 }

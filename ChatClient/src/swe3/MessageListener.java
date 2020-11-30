@@ -1,7 +1,6 @@
 package swe3;
 
 public interface MessageListener {
-    public void onMessage(String from, String body);
+    public void onMessage(String fromLogin, String msgBody);
 
 }
-
